@@ -9,7 +9,9 @@
   The values of leaf nodes are changed to 0.
   https://www.geeksforgeeks.org/convert-a-given-tree-to-sum-tree/
 
-3) Given a binary tree. Find its maximum depth – minimum depth.
+3. Given a binary tree. Find its maximum depth – minimum depth.
+
+4. https://www.careercup.com/question?id=5677905146281984
 
 ## Technical Round
 1. Given an array in which all numbers except two are repeated once.
