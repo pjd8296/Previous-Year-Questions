@@ -79,3 +79,48 @@ int Solution::chordCnt(int A) {
     return dp[n]%1000000007;
 }
 ```
+
+5. Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.
+
+**Method 1** (Simple) 
+Consider every element starting from the second element. Compute the sum of elements on its left and sum of elements on its right. If these two sums are same, return the element.
+
+**Method 2** (Using Prefix and Suffix Arrays : 
+
+We form a prefix and suffix sum arrays
+
+```
+Given array: 1 4 2 5
+Prefix Sum:  1  5 7 12
+Suffix Sum:  12 11 7 5
+```
+Now, we will traverse both prefix arrays. The index at which they yield equal result, is the index where the array is partitioned with equal sum.
+
+```c++
+
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int findElement(int arr[], int n)
+{
+    // Forming prefix sum array from 0
+    int prefixSum[n];
+    prefixSum[0] = arr[0];
+    for (int i = 1; i < n; i++)
+        prefixSum[i] = prefixSum[i - 1] + arr[i];
+ 
+    // Forming suffix sum array from n-1
+    int suffixSum[n];
+    suffixSum[n - 1] = arr[n - 1];
+    for (int i = n - 2; i >= 0; i--)
+        suffixSum[i] = suffixSum[i + 1] + arr[i];
+ 
+    // Find the point where prefix and suffix
+    // sums are same.
+    for (int i = 1; i < n - 1; i++)
+        if (prefixSum[i] == suffixSum[i])
+            return arr[i];
+ 
+    return -1;
+}
+```
