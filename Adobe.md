@@ -12,5 +12,39 @@ Eg. s1 = abc, s2=abc.  So answer is 3 (‘aba’)
   Eg. s=”heisagoodboy” So answer is “agood”.
 ```
 
-3. 
+3. **Floyd-Warshall Approach**
 ![](https://lh3.googleusercontent.com/SHXRtAcqOIAyhjnvJHfWFCFb4DpTVviSOzUNmVOU4fZoTpn04Ppzo5A1YQ1qr-GCkeBKfKI8M2MNzGTzusNmMmi7nHycJfJwXHKz7JnTOcqrfaqHd0C0IQH7s2y-0JfVRSc1n43L)
+
+**`O(N^2)` Approach**
+* Find distance of each node with other, which can be min(reaching other node from left, reaching other node from right)
+```c++
+#include <bits/stdc++.h>
+using namespace std;
+
+int n;
+vector<int> arr;
+
+int main()
+{
+    cin >> n;
+    arr = vector<int>(n);
+    int sum=0;
+    for(int i=0;i<n;i++){
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    int ans=0;
+    for(int i=0;i<n;i++){
+        int curr = i+1;
+        int temp=0;
+        while(curr != i){
+            ans = max(ans,min(arr[i],sum-temp-arr[i]));
+            temp+=arr[i];
+            curr = (curr +1)%n;
+        }
+    }
+    cout << ans<< endl;
+
+    return 0;
+}
+```
