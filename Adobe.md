@@ -140,7 +140,7 @@ int findElement(int arr[], int n)
             //see what events can be attended today
             while (i < n && A[i][0] == d)
                 pq.push(A[i++][1]);
-            //attend any one
+            //attend any one that will end earlier
             if (pq.size()) {
                 pq.pop();
                 ++res;
