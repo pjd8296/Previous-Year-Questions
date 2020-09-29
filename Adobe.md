@@ -134,10 +134,13 @@ int findElement(int arr[], int n)
         sort(A.begin(), A.end());
         int i = 0, res = 0, n = A.size();
         for (int d = 1; d <= 100000; ++d) {
+            //Already expired no need to keeep
             while (pq.size() && pq.top() < d)
                 pq.pop();
+            //see what events can be attended today
             while (i < n && A[i][0] == d)
                 pq.push(A[i++][1]);
+            //attend any one
             if (pq.size()) {
                 pq.pop();
                 ++res;
