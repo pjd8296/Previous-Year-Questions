@@ -48,3 +48,34 @@ int main()
     return 0;
 }
 ```
+
+4. Intersecting chords in a circle
+
+![](https://lh4.googleusercontent.com/85ChceCXyy4GLediMPE7zC__dtruLsPIlVXBqD-qEcGmZ7_XVJ-f3KEfEUtVuBTwZyky1J7YMa7ujI_VOhkloQ63BXV3hymZ_OVIJy5nPiioRbEmhmVCZZbVjheRiIyY1KwBkh17)
+
+Think in terms of DP.
+Can we relate answer for `N` with smaller answers.
+
+If we draw a chord between any two points, can you observe current set of points getting broken into two smaller sets `S_1` and `S_2`? Can a chord be drawn between two points where each point belong to different set?
+
+If we draw a chord from a point in `S_1` to a point in `S_2`, it will surely intersect the chord we’ve just drawn.
+
+So, we can arrive at a recurrence that `Ways(n) = sum[i = 0 to n-1] { Ways(i)*Ways(n-i-1) }`.
+Here we iterate over `i`, assuming that size of one of the sets is `i` and size of other set automatically is `(n-i-1)` since we’ve already used a pair of points and `i` pair of points in one set.
+
+
+```c++
+int Solution::chordCnt(int A) {
+    int n = 2*A;
+    vector<long long int> dp(n+1);
+    dp[0] = 1;
+    dp[2] = 1;
+    for(int i = 4; i <= n; i++) {
+        for(int j = 0; j <= i-2; j++) {
+            dp[i] += dp[j] * dp[i-j-2];
+            dp[i] %= 1000000007;
+        }
+    }
+    return dp[n]%1000000007;
+}
+```
