@@ -98,7 +98,7 @@ int Solution::chordCnt(int A) {
 **Method 1** (Simple) 
 Consider every element starting from the second element. Compute the sum of elements on its left and sum of elements on its right. If these two sums are same, return the element.
 
-**Method 2** (Using Prefix and Suffix Arrays : 
+**Method 2** (Using Prefix and Suffix Arrays)
 
 We form a prefix and suffix sum arrays
 
@@ -168,3 +168,14 @@ int findElement(int arr[], int n)
     }
  ```
  </details>
+
+7. Rescue Operation
+
+<details>
+  <summary>Code</summary>
+  
+![](https://lh3.googleusercontent.com/QnLrqfi-YM2i-GLisuXoH9PeWbZGhWDgULY4lCR7GvQLCbqJEvUGCZe0SSbyb8OxvXd5PyqwYq1XT60zRNOQDv8gLjh-ADQKJpKDyXrCyomQx7GxovTwIUenbeuQ-pYEZgp-yKZh)
+
+Soln: Apply dijkstra from source to all the nodes and then from destination to all the nodes with edges reversed(which will be equivalent to finding distance from all nodes to the destination).
+Answer will be the maximum of (distance of source to node) + (distance of node to destination)
+</details>
