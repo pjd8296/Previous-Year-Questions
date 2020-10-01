@@ -94,6 +94,8 @@ int Solution::chordCnt(int A) {
 </details>
 
 5. Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.
+  <details>
+    <summary>Solution</summary>
 
 **Method 1** (Simple) 
 Consider every element starting from the second element. Compute the sum of elements on its left and sum of elements on its right. If these two sums are same, return the element.
@@ -108,8 +110,6 @@ Prefix Sum:  1  5 7 12
 Suffix Sum:  12 11 7 5
 ```
 Now, we will traverse both prefix arrays. The index at which they yield equal result, is the index where the array is partitioned with equal sum.
-<details>
-  <summary>Code</summary>
 
 ```c++
 
