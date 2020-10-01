@@ -13,7 +13,12 @@ Eg. s1 = abc, s2=abc.  So answer is 3 (‘aba’)
 ```
 
 3. **Floyd-Warshall Approach**
+<details>
+  <summary>Code</summary>
+  
 ![](https://lh3.googleusercontent.com/SHXRtAcqOIAyhjnvJHfWFCFb4DpTVviSOzUNmVOU4fZoTpn04Ppzo5A1YQ1qr-GCkeBKfKI8M2MNzGTzusNmMmi7nHycJfJwXHKz7JnTOcqrfaqHd0C0IQH7s2y-0JfVRSc1n43L)
+
+</details>
 
 **`O(N^2)` Approach**
 * Find distance of each node with other, which can be min(reaching other node from left, reaching other node from right)
