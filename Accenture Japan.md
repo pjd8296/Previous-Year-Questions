@@ -1,6 +1,6 @@
 ## Ugly Numbers
 <details>
-  <summary>Code></summary>
+  <summary>Code</summary>
   
 ```c++
 class Solution {
