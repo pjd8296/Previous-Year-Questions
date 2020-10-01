@@ -17,6 +17,9 @@ Eg. s1 = abc, s2=abc.  So answer is 3 (‘aba’)
 
 **`O(N^2)` Approach**
 * Find distance of each node with other, which can be min(reaching other node from left, reaching other node from right)
+<details>
+  <summary>Code</summary>
+  
 ```c++
 #include <bits/stdc++.h>
 using namespace std;
@@ -48,6 +51,7 @@ int main()
     return 0;
 }
 ```
+</details>
 
 4. Intersecting chords in a circle
 
