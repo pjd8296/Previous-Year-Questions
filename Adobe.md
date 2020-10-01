@@ -60,6 +60,9 @@ int main()
 
 4. Intersecting chords in a circle
 
+<details>
+  <summary>Code</summary>
+
 ![](https://lh4.googleusercontent.com/85ChceCXyy4GLediMPE7zC__dtruLsPIlVXBqD-qEcGmZ7_XVJ-f3KEfEUtVuBTwZyky1J7YMa7ujI_VOhkloQ63BXV3hymZ_OVIJy5nPiioRbEmhmVCZZbVjheRiIyY1KwBkh17)
 
 Think in terms of DP.
@@ -88,6 +91,7 @@ int Solution::chordCnt(int A) {
     return dp[n]%1000000007;
 }
 ```
+</details>
 
 5. Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.
 
@@ -104,6 +108,8 @@ Prefix Sum:  1  5 7 12
 Suffix Sum:  12 11 7 5
 ```
 Now, we will traverse both prefix arrays. The index at which they yield equal result, is the index where the array is partitioned with equal sum.
+<details>
+  <summary>Code</summary>
 
 ```c++
 
@@ -133,9 +139,12 @@ int findElement(int arr[], int n)
     return -1;
 }
 ```
+</details>
 
 6. Maximum Number of Events That Can Be Attended
   https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/
+<details>
+  <summary>Code</summary>
 
 ```c++
     int maxEvents(vector<vector<int>>& A) {
@@ -158,4 +167,4 @@ int findElement(int arr[], int n)
         return res;
     }
  ```
- 
+ </details>
