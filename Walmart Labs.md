@@ -42,3 +42,21 @@ string findSubString(string str)
 } 
 ```
 </details>
+
+## Other Questions
+<details>
+  <summary>Images</summary>
+  
+![](https://i.imgur.com/tXUK53W.png)  
+![](https://i.imgur.com/ztdeKAg.png)
+![](https://i.imgur.com/fp5BNST.png)
+![](https://i.imgur.com/xiEAiLF.png)
+![](https://i.imgur.com/PuKZJXm.png)
+![](https://i.imgur.com/qLd4dVo.png)
+![](https://i.imgur.com/noecV9i.png)
+![](https://i.imgur.com/hsDvGbR.png)
+![](https://i.imgur.com/rVqvCU3.png)
+![](https://i.imgur.com/VovUatW.png)
+![](https://i.imgur.com/j6jXFFb.png)
+![](https://i.imgur.com/8qmY6Fl.png)
+</details>
