@@ -6,12 +6,7 @@
 
 4. You are given two numbers a and b. Determine the sum s for which maximum numbers between a and b( inclusive) have their sum of digits equal to s and also the number of times this sum s occurs.
 (Brute force won't pass. `a,b <=1e18`)
-
-<details>
-  <summary>Solution<summary>
-    
-[Digit DP](https://www.google.com/url?q=https://ide.geeksforgeeks.org/O3XN7ByK7J&sa=D&ust=1601697539873000&usg=AOvVaw23w_Ep5PkeyjIKRc8ONYAk)
-</details>
+ Solution: [Digit DP](https://www.google.com/url?q=https://ide.geeksforgeeks.org/O3XN7ByK7J&sa=D&ust=1601697539873000&usg=AOvVaw23w_Ep5PkeyjIKRc8ONYAk)
 
 5.  Array subset. Given an array, find a minimal subset of it such that the sum of its numbers is greater than the sum of numbers in the remaining subarray.
 
