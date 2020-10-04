@@ -133,7 +133,12 @@ bool isRepeat(char str[])
 <details>
  <summary>Solution</summary>
  
-*Not the exact solution, but somehow similar*
+*Not the exact solution, but somehow similar
+**Output:**
+Two lines.
+In first line the number of integers between A and B having sum of digits equal to S.
+In second line the smallest such number between A and B.*
+
 ```c++
 #include <stdio.h>
 #include <string.h>
