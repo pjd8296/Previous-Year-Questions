@@ -31,8 +31,9 @@ void printMaxActivities(Activitiy arr[], int n) {
       } 
     } 
 } 
+```
 ___
-
+```c++
 void SelectActivities(vector<int>s,vector<int>f){ 
 // Vector to store results. 
     vector<pair<int,int>>ans; 
@@ -69,6 +70,59 @@ void SelectActivities(vector<int>s,vector<int>f){
 </details>
 
 2. You are given two strings s and t. |s|>=|t|  You need to determine whether t can be concatenated multiple times to obtain s. Also if this is possible to do then you need to output the smallest string x such that both s and t can be obtained from x by some number of concatenations. (*Hint: Use KMP*)
+<details>
+ <summary>Solution</summary>
+ 
+```c++
+void computeLPSArray(char str[], int M, int lps[]) 
+{ 
+    int len = 0; //lenght of the previous longest prefix suffix 
+    int i = 1; 
+    lps[0] = 0; //lps[0] is always 0 
+    // the loop calculates lps[i] for i = 1 to M-1 
+    while (i < M) 
+    { 
+       if (str[i] == str[len]) 
+       { 
+           len++; 
+           lps[i] = len; 
+           i++; 
+       } 
+       else // (pat[i] != pat[len]) 
+       { 
+          if (len != 0) 
+          { 
+             len = lps[len-1]; 
+             // Also, note that we do not increment i here 
+          } 
+          else // if (len == 0) 
+          { 
+             lps[i] = 0; 
+             i++; 
+          } 
+       } 
+    } 
+} 
+// Returns true if str is repetition of one of its substrings 
+// else return false. 
+bool isRepeat(char str[]) 
+{ 
+    // Find length of string and create an array to 
+    // store lps values used in KMP 
+    int n = strlen(str); 
+    int lps[n]; 
+    // Preprocess the pattern (calculate lps[] array) 
+    computeLPSArray(str, n, lps); 
+    // Find length of longest suffix which is also 
+    // prefix of str. 
+    int len = lps[n-1];
+    // If there exist a suffix which is also prefix AND Length of the remaining substring divides total 
+    // length, then str[0..n-len-1] is the substring that repeats n/(n-len) times (Readers can print substring 
+    // and value of n/(n-len) for more clarity. 
+    return (len > 0 && n%(n-len) == 0)? true: false; 
+} 
+```
+</details>
 
 3. You are given three types of moves of the form ‘./’ ‘../’ ‘x/’. These moves represent folder transitions. You are given a sequence of such moves. You need to output the minimum steps you need to take from the last location  to reach the root.
 
