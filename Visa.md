@@ -129,6 +129,51 @@ bool isRepeat(char str[])
 4. You are given two numbers a and b. Determine the sum s for which maximum numbers between a and b( inclusive) have their sum of digits equal to s and also the number of times this sum s occurs.
 (Brute force won't pass. `a,b <=1e18`)
  Solution: [Digit DP](https://www.google.com/url?q=https://ide.geeksforgeeks.org/O3XN7ByK7J&sa=D&ust=1601697539873000&usg=AOvVaw23w_Ep5PkeyjIKRc8ONYAk)
+ 
+<details>
+ <summary>Solution</summary>
+ 
+```c++
+#include <stdio.h>
+#include <string.h>
+typedef long  llint;
+llint A, B;
+llint pow10[19];
+llint memo[19][200];
+llint min_solution = -1;
+llint rec( llint prefix, int digits, int sum ) {
+   if( sum < 0 ) return 0;
+   llint mini = prefix;
+   llint maxi = prefix + pow10[digits];
+   if( mini > B || maxi < A ) return 0;
+   if( digits == 0 ) {
+      if( sum > 0 ) return 0;      
+      if( min_solution == -1 ) min_solution = prefix;
+      return 1;
+   }
+   int memoize = (mini >= A && maxi <= B);
+   if( memoize && memo[digits][sum] != -1 ) return memo[digits][sum];
+   llint ret = 0;
+   
+   for( int dig = 0; dig < 10; ++dig ) 
+      ret += rec( prefix + dig*pow10[digits-1], digits-1, sum-dig );   
+   if( memoize ) memo[digits][sum] = ret;
+   return ret;
+}
+int main( void ) 
+{
+   pow10[0] = 1;
+   for( int i = 1; i <= 19; ++i ) pow10[i] = pow10[i-1] * 10;
+   int S;
+   scanf( "%lld%lld%d", &A, &B, &S );
+   
+   memset( memo, -1, sizeof memo );
+   printf( "%lld\n", rec( 0, 19, S ) );
+   printf( "%lld\n", min_solution );
+   return 0;
+}
+```
+</details>
 
 5.  Array subset. Given an array, find a minimal subset of it such that the sum of its numbers is greater than the sum of numbers in the remaining subarray.
 
