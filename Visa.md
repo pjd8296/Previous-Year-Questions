@@ -133,6 +133,7 @@ bool isRepeat(char str[])
 <details>
  <summary>Solution</summary>
  
+*Not the exact solution, but somehow similar*
 ```c++
 #include <stdio.h>
 #include <string.h>
