@@ -61,3 +61,33 @@ MCQs based on regression, ML, easy probability.
 * What happens to Confidence Intervals when Outliers are introduced? It increases.
 * Which of the following are sensitive to Outliers. Options were 1)mean 2)median 3) mode 4) sd
 range(1000-9999), find numbers divisible by 11W that are not palindromes. Ans 729
+
+# Fractal
+1. **Consecutive Numbers Sum**
+[Click Here](https://www.google.com/url?q=https://leetcode.com/problems/consecutive-numbers-sum/&sa=D&ust=1601697540103000&usg=AOvVaw3HOkA-DoU0m4tTjVvw50YE)
+2. **Equilibrium Index**
+Equilibrium index of an array is an index such that the sum of elements at lower indexes is equal to the sum of elements at higher indexes
+```c++
+int equilibrium(int arr[], int n)  
+{  
+    int sum = 0; // initialize sum of whole array  
+    int leftsum = 0; // initialize leftsum  
+  
+    /* Find sum of the whole array */
+    for (int i = 0; i < n; ++i)  
+        sum += arr[i];  
+  
+    for (int i = 0; i < n; ++i)  
+    {  
+        sum -= arr[i]; // sum is now right sum for index i  
+  
+        if (leftsum == sum)  
+            return i;  
+  
+        leftsum += arr[i];  
+    }  
+  
+    /* If no equilibrium index found, then return 0 */
+    return -1;  
+}  
+```
