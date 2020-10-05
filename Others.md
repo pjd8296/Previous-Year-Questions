@@ -42,4 +42,22 @@ int countSequencialVowels(char str[]){
 1 hour, 20 MCQ, 2 coding
 Coding:
 https://www.geeksforgeeks.org/smallest-window-contains-characters-string/
+
 https://www.programcreek.com/2014/05/leetcode-paint-house-java/
+
+# Honda Japan
+3 coding questions.
+
+* Traversal of BST,
+* finding the 4th digit in binary representation of the given number,
+* printing things when a number is a multiple of 3 or 5 or both.
+
+MCQs based on regression, ML, easy probability.
+
+* Read sampling and confidence intervals and regression as some questions were asked from it. Also questions based on z-table were asked.
+* A question on central limit theorem, one on finding pdf of exp(aY+b) if Y is normally distributed.
+* Other quant questions on Bayes Theorem and JEE level probability and P&C. eg. 6 black chairs and 4 red chairs, three customers bought a chair. Probability that there were two or more than 2 black chairs out of them. 4 rotten apples and 11 normal apples in a bag. We take out them one by one without replacement, probability that 9th apple is the last rotten apple.
+* Read about Variance, Bias, Cross Validation and Type 1 &2 errors.
+* What happens to Confidence Intervals when Outliers are introduced? It increases.
+* Which of the following are sensitive to Outliers. Options were 1)mean 2)median 3) mode 4) sd
+range(1000-9999), find numbers divisible by 11W that are not palindromes. Ans 729
