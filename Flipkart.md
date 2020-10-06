@@ -18,6 +18,7 @@ int maxProd = 0;
 for(int i=0;i<n;i++){
     for(int j=0;j<n-1;j++){
         maxProd = max(maxProd,dp[i][j]*dp[j+1][n-1]);
+        //find all palidromes as s[i:j] and s[j+1:n-1], if single char then dp[i][j] = 1
       }
    }
   return maxProd;
