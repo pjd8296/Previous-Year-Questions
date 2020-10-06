@@ -1,7 +1,9 @@
 ## Maximum product of non overlapping palindromes
 For input string `"acdapmpomp"`, we can choose `"aca"` and `"pmpmp"` to get a maximal product of score 3 * 5 = 15.
+
 **Solution**
-Firstly you should traverse the dp table to find out the length of longest palindromic subsequences using bottom up approach, then you can calculate the max product by multiplying `dp[i][j]` with `dp[j+1][n-1]` : Given below is the code in C++;
+
+Firstly you should traverse the dp table to find out the length of longest palindromic subsequences using bottom up approach, then you can calculate the max product by multiplying `dp[i][j]` with `dp[j+1][n-1]`
 ```c++
 int longestPalindromicSubsequenceProduct(string s){
 int n = s.size();
