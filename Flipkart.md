@@ -1,4 +1,5 @@
-## Maximum product of non overlapping palindromes
+1. Maximum product of non overlapping palindromes
+
 For input string `"acdapmpomp"`, we can choose `"aca"` and `"pmpmp"` to get a maximal product of score 3 * 5 = 15.
 
 **Solution**
@@ -24,3 +25,4 @@ for(int i=0;i<n;i++){
   return maxProd;
 }
 ```
+2. Maximum size square submatrix of 1’s in a given matrix of 1’s and 0’s
