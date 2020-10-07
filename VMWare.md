@@ -1,10 +1,10 @@
 1. There are two players Wendy and Bob. Given a string of arrangement of white and black pieces( e.g, wwbbbwww), we have to find who wins the game given the following rules:
 
-  a. Wendy goes first
-  b. Wendy picks w and Bob picks b
-  c. Wendy can pick a white piece only if it has at least one w on both sides. Same rule is for Bob.
-  d. After, removing a piece, the other pieces to its left and right are now adjacent.
-  e. The person who can’t make a move loses
+  * Wendy goes first
+  * Wendy picks w and Bob picks b
+  * Wendy can pick a white piece only if it has at least one w on both sides. Same rule is for Bob.
+  * After, removing a piece, the other pieces to its left and right are now adjacent.
+  * The person who can’t make a move loses
         
 Example:
 input: `wwwbbbbwww` , answer: Bob wins
