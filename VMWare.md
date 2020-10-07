@@ -14,7 +14,27 @@ input: `wwwbbbbwww` , answer: Bob wins
 * then Bob picks a b, string is now, wwbbww, now Wendy can’t pick a piece so Bob wins.
 
 **Solution:** For every block of consecutive w or b, count the number of w or b in that block. If the size of block>=3, number of chances for wendy or `bob += size of block-2`. If wendy has more chances, she wins, otherwise Bob wins.
-
+**Possible code:**
+```c++
+int n = s.length();
+int W = 0, B = 0;
+for(int i = 0; i < n; i++) {
+	int wCount = 0, bCount = 0;
+	for(int j = i; j < n; j++) {
+  		if(s[j] == 'w') wCount++;
+		if(s[j] == 'b') bCount++;
+		if(wCount == 3) W++;
+		if(bCount == 3) B++;
+		if(s[i] != s[j] or wCount == 3 or bCount == 3) break;
+	}
+}
+if(W > B) printf("Windie Wins");
+else if (B > W) printf("Bob Wins");
+else {
+	if((W+B)%2 == 1) printf("Windie Wins");
+	else printf("Bob Wins");
+}
+```
 
 2. Given an undirected unweighted graph of n nodes numbered from 1 to n and a source vertex, print all other vertex in increasing order of their distance from source. If multiple vertex have same distance, order them with their indices.
 
