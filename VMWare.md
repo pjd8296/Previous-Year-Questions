@@ -14,6 +14,7 @@ input: `wwwbbbbwww` , answer: Bob wins
 * then Bob picks a b, string is now, wwbbww, now Wendy can’t pick a piece so Bob wins.
 
 **Solution:** For every block of consecutive w or b, count the number of w or b in that block. If the size of block>=3, number of chances for wendy or `bob += size of block-2`. If wendy has more chances, she wins, otherwise Bob wins.
+
 **Possible code:**
 ```c++
 int n = s.length();
