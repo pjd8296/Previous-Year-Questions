@@ -1,4 +1,5 @@
 1. There are two players Wendy and Bob. Given a string of arrangement of white and black pieces( e.g, wwbbbwww), we have to find who wins the game given the following rules:
+
   a. Wendy goes first
   b. Wendy picks w and Bob picks b
   c. Wendy can pick a white piece only if it has at least one w on both sides. Same rule is for Bob.
