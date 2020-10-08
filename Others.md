@@ -96,8 +96,9 @@ int equilibrium(int arr[], int n)
 ```
 # Salesforce
 1. Given two string find if 1st string is present as a subsequence in the second string.
-Eg:   1st string: `butl`, 2nd string: `beautiful`. Print ‘`true`’.
-      1st string: `btel`, 2nd string: `beautiful`. print ‘`false`’.
+	Eg:   1st string: `butl`, 2nd string: `beautiful`. Print ‘`true`’.
+  			1st string: `btel`, 2nd string: `beautiful`. print ‘`false`’.
+      
 **Solution**
 ```c++
 class Solution {
