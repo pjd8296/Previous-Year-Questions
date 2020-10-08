@@ -1,7 +1,8 @@
 # Dream 11
 
 1. **Paths to a Goal**
-Given a string made of characters ‘l’ and ‘r’ you need to find out the no. of distinct subsequences of that string which will lead you to position ‘y’ from position ‘x’ on the number line of ‘n’ length, if ‘l’ moves you back and ‘r’ moves you front.
+Given a string made of characters ‘l’ and ‘r’ you need to find out the no. of distinct subsequences of that string
+which will lead you to position ‘y’ from position ‘x’ on the number line of ‘n’ length, if ‘l’ moves you back and ‘r’ moves you front.
 (Refer SAP Labs for this question)
 2. **Fun with Vowels**
 Given a string consisting of only vowels, find the longest subsequence in the given string such that it consists of all five vowels in the alphabetical order.
@@ -56,7 +57,9 @@ MCQs based on regression, ML, easy probability.
 
 * Read sampling and confidence intervals and regression as some questions were asked from it. Also questions based on z-table were asked.
 * A question on central limit theorem, one on finding pdf of exp(aY+b) if Y is normally distributed.
-* Other quant questions on Bayes Theorem and JEE level probability and P&C. eg. 6 black chairs and 4 red chairs, three customers bought a chair. Probability that there were two or more than 2 black chairs out of them. 4 rotten apples and 11 normal apples in a bag. We take out them one by one without replacement, probability that 9th apple is the last rotten apple.
+* Other quant questions on Bayes Theorem and JEE level probability and P&C.
+  eg. 6 black chairs and 4 red chairs, three customers bought a chair. Probability that there were two or more than 2 black chairs out of them.
+      4 rotten apples and 11 normal apples in a bag. We take out them one by one without replacement, probability that 9th apple is the last rotten apple.
 * Read about Variance, Bias, Cross Validation and Type 1 &2 errors.
 * What happens to Confidence Intervals when Outliers are introduced? It increases.
 * Which of the following are sensitive to Outliers. Options were 1)mean 2)median 3) mode 4) sd
@@ -91,3 +94,31 @@ int equilibrium(int arr[], int n)
     return -1;  
 }  
 ```
+# Salesforce
+1. Given two string find if 1st string is present as a subsequence in the second string.
+Eg:   1st string: `butl`, 2nd string: `beautiful`. Print ‘`true`’.
+      1st string: `btel`, 2nd string: `beautiful`. print ‘`false`’.
+**Solution**
+```c++
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        int j = 0;
+        for(int i = 0; i < t.length() and j < s.length(); i++) {
+            if(t[i] == s[j]) 
+                j++;
+        }
+        if(j == s.length()) return true;
+        return false;
+    }
+};
+```
+2. Given a string `S` and a pattern `k`, you need to find the shortest length substring of `S` which contains all the character of pattern.
+And also the string is cyclic in which you can come back to the starting position when you have reached the end in cycling order.
+
+Eg.-
+1) s=abgeasd, k=eag; return gea
+2) s=jainummsm, k=jam; return mja
+
+**Solution:** You just need to find the pattern `k` in `s+s`(write `s` two times as repetition allowed for cyclic case).
+O(n) solution required using sliding windows algorithm.
