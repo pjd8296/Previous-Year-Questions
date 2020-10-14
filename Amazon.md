@@ -1,6 +1,7 @@
 ## Favorite Genre
+Visit [here](https://www.google.com/url?q=https://leetcode.com/discuss/interview-question/373006&sa=D&ust=1602672883036000&usg=AOvVaw16XOb-wL6mszWwy96jQLKX) for explanation
 ```c++
-unordered_map<string,vector<string>> songsAndGenre(unordered_map<string,vector<string>>& users, unordered_map<string,vector<string>>& genres){
+    unordered_map<string,vector<string>> songsAndGenre(unordered_map<string,vector<string>>& users, unordered_map<string,vector<string>>& genres){
     unordered_map<string,string> songToGenre;
     unordered_map<string,unordered_map<string,int>> userToGenre;
     unordered_map<string,vector<string>> result;
