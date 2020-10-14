@@ -48,3 +48,21 @@ int minLinesToCoverPoints(int points[][2], int N, int xO, int yO)
     return minLines; 
 } 
 ```
+# Largest Subarray of equal 0's and 1's
+For explanation, visit [here](https://leetcode.com/problems/contiguous-array/solution/)
+```c++
+    int findMaxLength(vector<int>& A) {
+        int n = A.size();
+        unordered_map<int, int> m;
+        m[0] = -1;
+        int maxLen = 0, sum = 0;
+        for(int i = 0; i < n; i++) {
+            sum += (A[i] == 0) ? -1 : 1;
+            if(m.count(sum))
+                maxLen = max(maxLen, i - m[sum]);
+            else
+                m[sum] = i;
+        }
+        return maxLen;
+    }
+ ```
