@@ -79,3 +79,29 @@ int main() {
     } 
 }
 ```
+## Subtree of another tree
+<details>
+    <summary>Solution</summary>
+
+```c++
+class Solution {
+public:
+    bool inorder(TreeNode* s, TreeNode* t) {
+        if(!s and !t) return true;
+        if(!s or !t) return false;
+        bool b1 = inorder(s->left, t->left);
+        if(s->val!= t->val)
+            return false;
+        bool b2 = inorder(s->right, t->right);
+        return b1 and b2;
+    }
+    bool isSubtree(TreeNode* s, TreeNode* t) {
+        if(!s) return false;
+        bool b1 = isSubtree(s->left, t);
+        if(s->val == t->val and inorder(s, t)) return true;
+        bool b2 = isSubtree(s->right, t);
+        return b1 or b2;
+    }
+};
+```
+</details>
