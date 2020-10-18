@@ -145,3 +145,23 @@ public:
     }
 };
 ```
+</details>
+
+## Count pairs with given sum
+<details>
+    <summary>Solution</summary>
+    
+```c++
+int getPairsCount(int arr[], int n, int sum) {
+    unordered_map<int, int> m; 
+	int ans = 0;
+  	for(int i = 0; i < n; i++) {
+      if(m.count(sum - arr[i])) {
+        ans += m[sum - arr[i]];
+      }
+      m[arr[i]]++;
+    }
+  	return ans;
+}
+```
+</details>
