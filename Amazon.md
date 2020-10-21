@@ -297,6 +297,7 @@ int replaceSpaces(char str[])
 }
 ```
 </details>
+
 ## Infix to Postfix
 <details>
 	<summary>Solution</summary>
