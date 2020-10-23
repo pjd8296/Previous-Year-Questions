@@ -440,7 +440,8 @@ Until the end of the expression is reached, get one character and perform only o
 
 (b) If the character is an operator, and the operator stack is empty then push it onto the operator stack.
 
-(c) If the character is an operator and the operator stack is not empty, and the character's precedence is greater than the precedence of the stack top of operator stack,         then push the character onto the operator stack.
+(c) If the character is an operator and the operator stack is not empty, and the character's precedence is greater
+    than the precedence of the stack top of operator stack,  then push the character onto the operator stack.
 
 (d) If the character is "(", then push it onto operator stack.
 
