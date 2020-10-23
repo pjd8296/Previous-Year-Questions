@@ -372,3 +372,84 @@ void infixToPostfix(string s)
 }
 ```
 </details>
+
+## Evaluate Postfix
+
+<details>
+	<summary>Solution</summary>
+	
+```c++
+int evalRPN(vector<string>& tokens) {
+    stack<int> stn;
+    for(auto s:tokens) {
+        if(s.size()>1 || isdigit(s[0])) stn.push(stoi(s));
+        else {
+            auto x2=stn.top(); stn.pop();
+            auto x1=stn.top(); stn.pop();
+            switch(s[0]) {
+                case '+': x1+=x2; break;
+                case '-': x1-=x2; break;
+                case '*': x1*=x2; break;
+                case '/': x1/=x2; break;
+            }
+            stn.push(x1);
+        }
+    }
+    return stn.top();
+}
+```
+</details>
+
+## Infix evaluation
+Two methods:
+1. Infix-to-postfix + postfix-evaluate
+2. Using Two Stacks
+
+<details>
+	<summary>Explanation</summary>
+
+In the usual arithmetic expressions the operator is written between the operands.  Such operators are called binary operators.
+Such expressions are called infix expressions.  The operators + and - work as unary operators as well.
+In the discussions below we consider all operators to be binary.
+
+Assume,
+
+1.  Permitted operands: A,B,C,D
+2.  Permitted operators: +,-, *, /, ^(exponentiation)
+3.  All values are float
+4.  Blanks are permitted in expression
+5.  Constants are not permitted in the expression
+6.  Parenthesis are permitted
+
+Given values of the operand A, B, C and D, the problem is to evaluate an expression of the form:  A+B*C-D.
+
+Here is a simple algorithm:
+
+We will use two stacks:
+
+Operand stack: to keep values (numbers)  and
+Operator stack: to keep operators (+, -, *, . and ^).  
+
+In the following, “process” means, (i) pop operand stack once (value1) (ii) pop operator stack once (operator) (iii) pop operand stack again (value2) (iv) compute value1 operator  value2 (v) push the value obtained in operand stack.          
+
+Algorithm:
+
+Until the end of the expression is reached, get one character and perform only one of the steps (a) through (f):
+
+(a) If the character is an operand, push it onto the operand stack.
+
+(b) If the character is an operator, and the operator stack is empty then push it onto the operator stack.
+
+(c) If the character is an operator and the operator stack is not empty, and the character's precedence is greater than the precedence of the stack top of operator stack,         then push the character onto the operator stack.
+
+(d) If the character is "(", then push it onto operator stack.
+
+(e) If the character is ")", then "process" as explained above until the corresponding "(" is encountered in operator stack.
+    At this stage POP the operator stack and ignore "(."
+
+(f) If cases (a), (b), (c), (d) and (e) do not apply, then process as explained above.
+
+When there are no more input characters, keep processing until the operator stack becomes empty.
+The values left in the operand stack is the final result of the expression.
+
+</details>
