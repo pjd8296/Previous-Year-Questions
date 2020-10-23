@@ -433,7 +433,7 @@ Operator stack: to keep operators (+, -, *, . and ^).
 In the following, “process” means, (i) pop operand stack once (value1) (ii) pop operator stack once (operator) (iii) pop operand stack again (value2) (iv) compute value1 operator  value2 (v) push the value obtained in operand stack.          
 
 Algorithm:
-
+```
 Until the end of the expression is reached, get one character and perform only one of the steps (a) through (f):
 
 (a) If the character is an operand, push it onto the operand stack.
@@ -448,7 +448,7 @@ Until the end of the expression is reached, get one character and perform only o
     At this stage POP the operator stack and ignore "(."
 
 (f) If cases (a), (b), (c), (d) and (e) do not apply, then process as explained above.
-
+```
 When there are no more input characters, keep processing until the operator stack becomes empty.
 The values left in the operand stack is the final result of the expression.
 
