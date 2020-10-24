@@ -649,3 +649,23 @@ int main()
 } 
 ```
 </details>
+
+## Longest Decreasing Array
+
+<details>
+	<summary>Solution</summary>
+
+```c++
+vector<int> dp(n, 1);
+int ans = 0;
+for(int i = 1; i < n; i++) {
+	for(int j = 0; j < i; j++) {
+		if(A[j] > A[i] and dp[j] + 1 > dp[i]) {
+			dp[i] = dp[j] + 1;
+			ans = max(dp[i], ans);
+		}
+	}
+}
+return ans;
+```
+</details>
