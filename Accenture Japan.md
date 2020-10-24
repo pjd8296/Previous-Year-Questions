@@ -50,7 +50,7 @@ void backtrack(string& s, int i, int n) {
     if(i == n) return;
     for(int j = 0; j < n-i; j++) {
         string str = s.substr(i, j+1);
-        cout << str<< endl;
+        //cout << str<< endl;
         if(isPal(str)) ans++;
     }
     backtrack(s, i+1, n);
