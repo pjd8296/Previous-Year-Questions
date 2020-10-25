@@ -57,7 +57,7 @@ int main()
 ```
 </details>
 
-4. Intersecting chords in a circle
+4. **Intersecting chords in a circle**
 
 <details>
   <summary>Code</summary>
@@ -92,7 +92,7 @@ int Solution::chordCnt(int A) {
 ```
 </details>
 
-5. Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.
+5. **Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.**
   <details>
     <summary>Solution</summary>
 
@@ -140,7 +140,7 @@ int findElement(int arr[], int n)
 ```
 </details>
 
-6. Maximum Number of Events That Can Be Attended
+6. **Maximum Number of Events That Can Be Attended**
   https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/
 <details>
   <summary>Code</summary>
@@ -168,7 +168,7 @@ int findElement(int arr[], int n)
  ```
  </details>
 
-7. Rescue Operation
+7. **Rescue Operation**
 
 <details>
   <summary>Code</summary>
@@ -179,7 +179,7 @@ Soln: Apply dijkstra from source to all the nodes and then from destination to a
 Answer will be the maximum of (distance of source to node) + (distance of node to destination)
 </details>
 
-## Selling Products
+8. **Selling Products**
 
 <details>
   <summary>Solution</summary>
