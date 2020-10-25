@@ -253,3 +253,63 @@ See [here](https://stackoverflow.com/questions/62816143/how-many-words-of-length
    }
    ```
    </details>
+
+10. **Shortest Path in a grid**
+
+See [here](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)
+<details>
+  <summary>Solution</summary>
+
+```c++
+class Solution {
+public:
+    vector<int> dirX{0, 1, 0, -1};
+    vector<int> dirY{-1, 0, 1, 0};
+    
+    int shortestPath(vector<vector<int>>& A, int k) {
+        int m = A.size(), n = m ? A[0].size() : 0;
+        vector<vector<vector<bool>>> visited(m, vector<vector<bool>>(n, vector<bool>(k+1, false)));
+        queue<vector<int>> q;
+        
+        if(A[0][0]) {
+            q.push({0,0,1});
+            visited[0][0][1] = true;
+        }
+        else {
+            q.push({0,0,0});
+            visited[0][0][0] = true;
+        }
+        int count = 0;
+        
+        while(!q.empty()) {
+            int qSize = q.size();
+            for(int i = 0; i < qSize; i++) {
+                vector<int> v = q.front(); q.pop();
+                if(v[2] == k+1) continue;
+                int x = v[0], y = v[1];
+                if(x == m-1 and y == n-1)
+                    return count;
+                
+                for(int dir = 0; dir < 4; dir++) {
+                    int x1 = x + dirX[dir], y1 = y + dirY[dir];
+                    
+                    if(x1 >= 0 and y1 >= 0 and x1 < m and y1 < n) {
+                    
+                        if(A[x1][y1] and !visited[x1][y1][v[2]+1]) {
+                            q.push({x1, y1, v[2]+1});
+                            visited[x1][y1][v[2]+1] = 1;
+                        }
+                        else if(!A[x1][y1] and !visited[x1][y1][v[2]]) {
+                            q.push({x1,y1,v[2]});
+                            visited[x1][y1][v[2]] = 1;
+                        }
+                    }
+                }
+            }
+            count++;
+        }
+        return -1;
+    }
+};
+```
+</details>
