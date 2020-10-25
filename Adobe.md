@@ -211,3 +211,45 @@ public:
 ```
 </details>
 
+9. **String Patterns**
+See [here](https://stackoverflow.com/questions/62816143/how-many-words-of-length-n-have-at-most-k-consecutive-vowels)
+
+<details>
+  <summary>Solution</summary>
+  
+```c++
+   #include<bits/stdc++.h>
+   #define mod 1000000007
+   using namespace std;
+
+   int solve(int wordLen, int maxVowels){
+       long long dp[wordLen+1][2];
+
+       dp[0][1] = dp[0][0] = 1;
+       dp[1][1] = 21;
+       dp[1][0]  = 5;
+
+       for(int i  = 2;i<=wordLen;i++){
+
+           dp[i][1] = (21*(dp[i-1][1]+dp[i-1][0])%mod)%mod;
+
+           int k  = i, j = 1, p = 5;
+           dp[i][0] = 0;
+
+           while(k>0 && j<=maxVowels){
+               dp[i][0] = (dp[i][0] + (p*dp[i-j][1])%mod)%mod;
+               p = (p*5)%mod;
+               k--;
+               j++;
+           } 
+       }
+
+       return (int)(dp[wordLen][0]+dp[wordLen][1])%mod;
+   }
+
+   int main(){
+       cout<<solve(5, 3); 
+       return 0;
+   }
+   ```
+   </details>
