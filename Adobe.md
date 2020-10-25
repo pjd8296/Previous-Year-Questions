@@ -178,3 +178,34 @@ int findElement(int arr[], int n)
 Soln: Apply dijkstra from source to all the nodes and then from destination to all the nodes with edges reversed(which will be equivalent to finding distance from all nodes to the destination).
 Answer will be the maximum of (distance of source to node) + (distance of node to destination)
 </details>
+
+## Selling Products
+
+<details>
+  <summary>Solution</summary>
+
+```c++
+class Solution {
+public:
+    int findLeastNumOfUniqueInts(vector<int>& arr, int k) {
+        unordered_map<int, int> m;
+        for(int x: arr)
+            m[x]++;
+        vector<pair<int, int>> v;
+        for(auto& [k, val]: m)
+            v.push_back({val, k});
+        sort(v.begin(), v.end());
+        int count = 0;
+        int n = v.size();
+        for(int i = 0; i < n; i++) {
+            if(v[i].first <= k) {
+                k -= v[i].first;
+                count++;
+            }
+        }
+        return n-count;
+    }
+};
+```
+</details>
+
