@@ -181,6 +181,8 @@ Answer will be the maximum of (distance of source to node) + (distance of node t
 
 8. **Selling Products**
 
+same as [this](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/)
+
 <details>
   <summary>Solution</summary>
 
