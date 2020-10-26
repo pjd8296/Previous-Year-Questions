@@ -1,3 +1,35 @@
+## Jhul in Prison
+`x` - vertical bars removed, `y` - horizontal bars removed, size of grid does not matter in this case
+```c++
+int main() {
+    ll x, y;
+    cin >> x >> y;
+    vector<ll> a(x), b(y);
+    for(ll i = 0; i < x; i++)
+        cin >> a[i];
+    sort(a.begin(), a.end());
+    for(ll i = 0; i < y; i++)
+        cin >> b[i];
+    sort(b.begin(), b.end());
+    ll len = 2, maxLen = 2;
+    for(ll i = 1; i < x; i++) {
+        if(a[i] - a[i-1] == 1) {
+            len++;
+            maxLen = max(maxLen, len);
+        }
+        else len = 2;
+    }
+    ll wid = 2, maxWid = 2;
+    for(ll i = 1; i < y; i++) {
+        if(b[i] - b[i-1] == 1) {
+            wid++;
+            maxWid = max(maxWid, wid);
+        }
+        else wid = 2;
+    }
+    cout << maxLen * maxWid <<endl;
+}
+```
 ## Jhul and Distinct numbers
 Jhul has an array of `N` integers. His crush has challenged him to find the length of smallest sub-array that contains all the distinct elements of array. Jhul, being a dumb fellow, was unable to do that. So, now he seeks your help.
 ```
