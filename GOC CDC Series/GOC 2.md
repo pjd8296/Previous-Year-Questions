@@ -1,3 +1,33 @@
+## Team Satisfaction
+N number of persons, at max K number of teams, no teams have more than L score difference. Find no. of such teams.
+```c++
+int main() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0); cout.tie(0);
+    int t;
+    cin >> t;
+    while(t--) {
+        ll n, k, l;
+        cin >> n >> k >> l;
+        vector<ll> A(n);
+        for(ll& x: A)
+            cin >> x;
+        ll i = 0, ans = 0;
+        while(i < n) {
+            vector<ll> v;
+            ll cmin = A[i];
+            while(i<n and (ll)v.size() < k) {
+                cmin = min(A[i], cmin);
+                if(i > 0 and A[i] - cmin > l)
+                    break;
+                v.push_back(A[i++]);
+            }
+            ans++;
+        }
+        cout << ans << endl;
+    }
+}
+```
 ## Jhul in Prison
 `x` - vertical bars removed, `y` - horizontal bars removed, size of grid does not matter in this case
 ```c++
