@@ -5,14 +5,14 @@ Eg. s1 = abc, s2=abc.  So answer is 3 (‘aba’)
 ```
 **Soln** :- Concat s1 and s2. Let s=s1+s2. t=reverse of s. Apply LCS on s and t, which is the answer. All test cases passed.
 
-* (Need to solve) Given a string s. Return substring of length 5 which occurs maximum times. If several of them exists, then you know what to do.
+* Given a string s. Return substring of length 5 which occurs maximum times. If several of them exists, then you know what to do.
 ```
   Yes, return the lexicographically smallest one. 5<=N<=10^6.
   Eg. s= “bbbbbaaaaabbabababa. So answer is “ababa”.
   Eg. s=”heisagoodboy” So answer is “agood”.
 ```
 
-3. **Bus Stops**
+* **Bus Stops**
 <details>
   <summary>Floyd-Warshall Approach</summary>
   
@@ -57,7 +57,7 @@ int main()
 ```
 </details>
 
-4. **Intersecting chords in a circle**
+* **Intersecting chords in a circle**
 
 <details>
   <summary>Code</summary>
@@ -92,7 +92,7 @@ int Solution::chordCnt(int A) {
 ```
 </details>
 
-5. **Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.**
+* **Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.**
   <details>
     <summary>Solution</summary>
 
@@ -140,7 +140,7 @@ int findElement(int arr[], int n)
 ```
 </details>
 
-6. **Maximum Number of Events That Can Be Attended**
+* **Maximum Number of Events That Can Be Attended**
   https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended/
 <details>
   <summary>Code</summary>
@@ -168,7 +168,7 @@ int findElement(int arr[], int n)
  ```
  </details>
 
-7. **Rescue Operation**
+* **Rescue Operation**
 
 <details>
   <summary>Code</summary>
@@ -179,7 +179,7 @@ Soln: Apply dijkstra from source to all the nodes and then from destination to a
 Answer will be the maximum of (distance of source to node) + (distance of node to destination)
 </details>
 
-8. **Selling Products**
+* **Selling Products**
 
 same as [this](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/)
 
@@ -211,7 +211,7 @@ public:
 ```
 </details>
 
-9. **String Patterns**
+* **String Patterns**
 See [here](https://stackoverflow.com/questions/62816143/how-many-words-of-length-n-have-at-most-k-consecutive-vowels)
 
 <details>
@@ -254,7 +254,7 @@ See [here](https://stackoverflow.com/questions/62816143/how-many-words-of-length
    ```
    </details>
 
-10. **Shortest Path in a grid**
+* **Shortest Path in a grid**
 
 See [here](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)
 <details>
