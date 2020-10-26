@@ -19,9 +19,12 @@ int main() {
             if(i == 0 || s[i] == s[i - 1])cnt.back()++; 
             else cnt.push_back(1); 
         }
-
+        //At most one good substring can be there ending at one index
+        //every element of cnt indicates clusters of contiguous 1's or 0's
+        //so cnt[i] and cnt[i+1] suggests that we are checking 1-0 and 0-1 pairs
         long long ans = 0; 
-        for(int i = 0;i + 1 < cnt.size(); ++i)ans += min(cnt[i], cnt[i + 1]); 
+        for(int i = 0;i + 1 < cnt.size(); ++i)
+            ans += min(cnt[i], cnt[i + 1]); 
         cout<<ans<<"\n"; 
     }
 
