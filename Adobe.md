@@ -93,7 +93,8 @@ int Solution::chordCnt(int A) {
 </details>
 
 * **Given, an array of size n. Find an element that divides the array into two sub-arrays with equal sum.**
-  <details>
+
+ <details>
     <summary>Solution</summary>
 
 **Method 1** (Simple) 
