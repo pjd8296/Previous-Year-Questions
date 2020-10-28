@@ -1,3 +1,66 @@
+# AppDynamics
+
+Min dist from all the n cities; cost of travelling i.e. no. of persons `A[i]`, x and y coordinate is given. Find min cost.
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int xMax, yMax;
+
+struct pos {
+    int x, y, dist;
+    pos(int x, int y, int dist): x(x), y(y), dist(dist){}
+};
+void solve(int i, int j, int persons, vector<vector<int>>& res) {
+    queue<pos> q;
+    vector<vector<int>> visited(xMax+1, (vector<int>(yMax+1, false)));
+    int dirX[4] = {0,1,0,-1}, dirY[4] = {1,0,-1,0};
+    q.push(pos(i, j, 0));
+    visited[i][j] = true;
+    while(!q.empty()) {
+        int k = q.size();
+        for(int l = 0; l<k; l++) {
+            auto p = q.front(); q.pop();
+            int x = p.x, y = p.y, d = p.dist;
+            res[x][y] += d;
+            for(int dir = 0; dir < 4; dir++) {
+                int r = x + dirX[dir], c = y + dirY[dir];
+                if(r>=0 and c>=0 and r<=xMax and c<=yMax) {
+                if(!visited[r][c]) {
+                    q.push(pos(r,c,persons*(1+d)));
+                    visited[r][c] = true;
+                }
+                }
+            }
+        }
+    }
+}
+int main() {
+    int n;
+    cin >> n;
+    vector<int> A(n), X(n), Y(n);
+    for(int i = 0; i < n; i++) {
+        int a,b,c;
+        cin >> a >> b >> c;
+        A[i] = a; Y[i] = b; X[i] = c;
+    }
+    xMax = *max_element(X.begin(), X.end());
+    yMax = *max_element(Y.begin(), Y.end());
+    vector<vector<int>> res(xMax+1, vector<int> (yMax+1, 0));
+    for(int i = 0; i < n; i++) {
+        solve(X[i], Y[i], A[i], res);
+    }
+    int xMin = 0, yMin = 0, minDist = INT_MAX;
+    for(int i = 0; i <= xMax; i++) {
+        for(int j = 0; j <= yMax; j++) {
+            minDist = min(minDist, res[i][j]);
+            //cout << res[i][j] <<" ";
+        }
+        //cout <<endl;
+    }
+    cout << minDist <<endl;
+}
+```
 # Dream 11
 
 1. **Paths to a Goal**
